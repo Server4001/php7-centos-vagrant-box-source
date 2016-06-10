@@ -1,0 +1,18 @@
+---
+- name: Install MySQL repo
+  yum:
+    name: "{{ mysql_repo_url }}"
+    state: present
+
+- name: Disable MySQL 5.6 and enable 5.7
+  command: "{{ item }}"
+  args:
+    creates: /usr/bin/mysql
+  with_items:
+    - yum-config-manager --disable mysql56-community
+    - yum-config-manager --enable mysql57-community-dmr
+
+- name: Install MySQL server
+  yum:
+    name: "mysql-community-server-{{ mysql_version }}"
+    state: present

@@ -1,0 +1,55 @@
+---
+- name: Configure PHP
+  template:
+    src: php.ini.j2
+    dest: /etc/php.ini
+    mode: 0644
+    owner: root
+    group: root
+  notify: Restart PHP-FPM
+
+- name: Configure PHP-FPM globally
+  template:
+    src: php-fpm.conf.j2
+    dest: /etc/php-fpm.conf
+    mode: 0644
+    owner: root
+    group: root
+  notify: Restart PHP-FPM
+
+- name: Configure PHP-FPM www node
+  template:
+    src: www.conf.j2
+    dest: /etc/php-fpm.d/www.conf
+    mode: 0644
+    owner: root
+    group: root
+  notify: Restart PHP-FPM
+
+- name: Configure PHP Xdebug
+  template:
+    src: xdebug.ini.j2
+    dest: /etc/php.d/xdebug.ini
+    mode: 0644
+    owner: root
+    group: root
+  notify: Restart PHP-FPM
+
+- name: Configure PHP-ZTS Xdebug
+  template:
+    src: xdebug-zts.ini.j2
+    dest: /etc/php-zts.d/xdebug.ini
+    mode: 0644
+    owner: root
+    group: root
+  notify: Restart PHP-FPM
+
+- name: Change ownership of PHP session and cache folders
+  file:
+    path: "/var/lib/php/{{ item }}"
+    owner: vagrant
+    group: vagrant
+    mode: 0770
+  with_items:
+    - session
+    - wsdlcache

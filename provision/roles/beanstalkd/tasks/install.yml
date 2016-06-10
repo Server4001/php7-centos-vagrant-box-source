@@ -1,0 +1,11 @@
+---
+- name: Install beanstalkd
+  yum:
+    name: beanstalkd
+    state: latest
+
+- name: Start beanstalkd
+  service:
+    name: beanstalkd
+    state: started
+    enabled: true

@@ -1,0 +1,23 @@
+---
+php_packages:
+  - php70w
+  - php70w-opcache
+  - php70w-fpm
+  - php70w-cli
+  - php70w-common
+  - php70w-devel
+  - php70w-gd
+  - php70w-intl
+  - php70w-mbstring
+  - php70w-mcrypt
+  - php70w-mysqlnd
+  - php70w-pdo
+  - php70w-pear
+  - php70w-pecl-imagick
+  - php70w-pecl-xdebug
+  - php70w-soap
+  - php70w-xml
+  - php70w-xmlrpc
+
+extension_build_directory: /opt
+extension_modules_folder: /usr/lib64/php/modules

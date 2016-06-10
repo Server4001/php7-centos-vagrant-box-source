@@ -1,0 +1,24 @@
+---
+- name: Copy non-root user's bash profile
+  template:
+    src: .bash_profile.j2
+    dest: "/home/{{ developer_user }}/.bash_profile"
+    mode: 0644
+    owner: "{{ developer_user }}"
+    group: "{{ developer_user }}"
+
+- name: Copy non-root user's bashrc
+  template:
+    src: vagrant.bashrc.j2
+    dest: "/home/{{ developer_user }}/.bashrc"
+    mode: 0644
+    owner: "{{ developer_user }}"
+    group: "{{ developer_user }}"
+
+- name: Copy root user's bashrc
+  template:
+    src: root.bashrc.j2
+    dest: /root/.bashrc
+    mode: 0644
+    owner: root
+    group: root

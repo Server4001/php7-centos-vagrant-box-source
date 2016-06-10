@@ -1,0 +1,16 @@
+---
+- name: "Provision Vagrant"
+  hosts: default
+  sudo: yes
+  remote_user: vagrant
+  roles:
+    - common
+    - repo_install
+    - mysql
+    - php7
+    - nginx
+    - beanstalkd
+    - redis
+    - memcached
+    - composer
+    - bash

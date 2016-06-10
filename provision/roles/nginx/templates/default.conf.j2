@@ -1,0 +1,44 @@
+# {{ ansible_managed }}
+upstream phpfpmbackend {
+    server unix:{{ php_fpm_socket_file }};
+}
+
+server {
+    listen       80;
+    server_name  localhost;
+
+    client_max_body_size 16M;
+
+    access_log /var/log/nginx/default.access.log main;
+    error_log /var/log/nginx/default.error.log;
+
+    root /var/www/html;
+    index index.php index.html index.htm;
+
+    # Proxy PHP requests to the FastCGI backend
+    location ~ [^/]\.php(/|$) {
+        fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+        if (!-f $document_root$fastcgi_script_name) {
+            return 404;
+        }
+
+        fastcgi_buffers 8 8k;
+        fastcgi_buffer_size 8k;
+
+        fastcgi_pass phpfpmbackend;
+        fastcgi_index index.php;
+
+        include /etc/nginx/fastcgi_params;
+
+        fastcgi_param PATH_INFO       $fastcgi_path_info;
+        fastcgi_param PATH_TRANSLATED $document_root$fastcgi_path_info;
+    }
+
+    # Try to send all non-existing files to the main /index.php (Frameworks)
+    location @indexphp {
+        if (-f $document_root/index.php) { rewrite .* /index.php last; }
+    }
+
+    try_files $uri $uri/ @indexphp;
+}
+

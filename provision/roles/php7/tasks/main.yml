@@ -1,0 +1,8 @@
+---
+- include: install.yml
+
+- include: configure.yml
+
+- include: ast_extension_install.yml
+
+- include: ast_extension_configure.yml

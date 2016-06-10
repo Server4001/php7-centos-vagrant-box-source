@@ -1,0 +1,5 @@
+---
+composer_home_path: "~/.composer"
+composer_global_packages:
+  - { name: psy/psysh, release: "0.7.2" }
+  - { name: phpunit/phpunit, release: "4.8.26" }

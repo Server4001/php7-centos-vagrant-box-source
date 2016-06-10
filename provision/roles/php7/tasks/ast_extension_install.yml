@@ -1,0 +1,20 @@
+---
+- name: Clone repo
+  git:
+    repo: https://github.com/nikic/php-ast.git
+    dest: "{{ extension_build_directory }}/php-ast"
+    clone: yes
+    version: v0.1.1
+
+- name: Compile extension
+  command: "{{ item }}"
+  args:
+    chdir: "{{ extension_build_directory }}/php-ast"
+    creates: "{{ extension_modules_folder }}/ast.so"
+  with_items:
+    - phpize
+    - ./configure
+    - make
+    - make install
+    - make clean
+    - phpize --clean

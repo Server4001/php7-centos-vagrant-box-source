@@ -1,0 +1,24 @@
+---
+- name: Disable firewall built in with box
+  service: name={{ item }} state=stopped enabled=no
+  with_items:
+  - iptables
+  - ip6tables
+
+- name: Install pre-reqs and utilities
+  yum: pkg={{ item }} state=installed
+  with_items:
+  - vim
+  - git
+  - tree
+  - screen
+  - gcc
+  - gcc-c++
+
+- name: Install Ansible packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - libselinux-python
+    - MySQL-python

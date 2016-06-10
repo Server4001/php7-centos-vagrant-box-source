@@ -1,0 +1,9 @@
+---
+# MySQL socket used by MySQL and PHP.
+mysql_socket: /var/lib/mysql/mysql.sock
+
+# PHP-FPM socket used by Nginx and PHP-FPM.
+php_fpm_socket_file: /var/run/php-fpm/www.socket
+
+# Non-root developer username.
+developer_user: vagrant

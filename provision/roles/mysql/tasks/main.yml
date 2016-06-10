@@ -1,0 +1,15 @@
+---
+# Install MySQL server
+- include: install.yml
+
+# Configure MySQL
+- include: configure.yml
+
+# Simulate mysql_secure_installation
+- include: mysql_secure_installation.yml
+
+- name: Ensure MySQL is running
+  service:
+    name: mysqld
+    state: started
+    enabled: yes
