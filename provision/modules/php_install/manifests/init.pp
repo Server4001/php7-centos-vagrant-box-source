@@ -33,6 +33,7 @@ class php_install {
             "php70w-xml",
             "php70w-xmlrpc",
         ]:
+        # TODO : Add ensure => "installed",
         require => Class["php::cli"],
     }
 
