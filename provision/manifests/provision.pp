@@ -6,3 +6,4 @@ class { nginx: }
 class { php_install: }
 class { php_ast_extension: }
 class { redis: }
+class { beanstalkd: }
