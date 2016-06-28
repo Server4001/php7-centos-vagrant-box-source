@@ -5,8 +5,11 @@ class php_install {
     }
 
     php::ini { "/etc/php.ini":
-        display_errors => "On",
-        memory_limit   => "256M",
+        display_errors      => "On",
+        memory_limit        => "128M",
+        post_max_size       => "999M",
+        upload_max_filesize => "999M",
+        date_timezone       => "America/Los_Angeles",
     }
 
     class { "php::cli":
@@ -33,8 +36,25 @@ class php_install {
             "php70w-xml",
             "php70w-xmlrpc",
         ]:
-        # TODO : Add ensure => "installed",
         require => Class["php::cli"],
+    }
+
+    php::module::ini { "xdebug":
+        ensure => "present",
+        pkgname => "php70w-pecl-xdebug",
+        settings => {
+            "xdebug.remote_enable"            => 1,
+            "xdebug.remote_host"              => "127.0.0.1",
+            "xdebug.remote_port"              => 9000,
+            "xdebug.profiler_enable"          => 0,
+            "xdebug.profiler_output_dir"      => "/tmp",
+            "xdebug.idekey"                   => "PHPSTORM",
+            "xdebug.remote_autostart"         => 1,
+            "xdebug.remote_connect_back"      => "on",
+            "xdebug.var_display_max_depth"    => 8,
+            "xdebug.var_display_max_children" => 256,
+            "xdebug.var_display_max_data"     => -1,
+        },
     }
 
     class { "::php::fpm::daemon":
