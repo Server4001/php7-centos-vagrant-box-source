@@ -39,22 +39,20 @@ class php_install {
         require => Class["php::cli"],
     }
 
-    php::module::ini { "xdebug":
-        ensure => "present",
-        pkgname => "php70w-pecl-xdebug",
-        settings => {
-            "xdebug.remote_enable"            => 1,
-            "xdebug.remote_host"              => "127.0.0.1",
-            "xdebug.remote_port"              => 9000,
-            "xdebug.profiler_enable"          => 0,
-            "xdebug.profiler_output_dir"      => "/tmp",
-            "xdebug.idekey"                   => "PHPSTORM",
-            "xdebug.remote_autostart"         => 1,
-            "xdebug.remote_connect_back"      => "on",
-            "xdebug.var_display_max_depth"    => 8,
-            "xdebug.var_display_max_children" => 256,
-            "xdebug.var_display_max_data"     => -1,
-        },
+    file { "/etc/php.d/xdebug.ini":
+        content => template("php_install/xdebug.ini.erb"),
+        owner   => root,
+        group   => root,
+        mode    => 0644,
+        require => Class["php::common"],
+    }
+
+    file { "/etc/php-zts.d/xdebug.ini":
+        content => template("php_install/xdebug-zts.ini.erb"),
+        owner   => root,
+        group   => root,
+        mode    => 0644,
+        require => Class["php::common"],
     }
 
     class { "::php::fpm::daemon":
