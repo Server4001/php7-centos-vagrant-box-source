@@ -1,4 +1,6 @@
 class php_install {
+    $php_socket_path = "/var/run/php-fpm/www.socket"
+
     class { "php::common":
         common_package_name => "php70w-common",
         require             => Yumrepo["webtatic"],
@@ -64,7 +66,7 @@ class php_install {
 
     php::fpm::conf { "www":
         package_name    => "php70w-fpm",
-        listen          => "/var/run/php-fpm/www.socket",
+        listen          => $php_socket_path,
         user            => "vagrant",
         group           => "vagrant",
         listen_owner    => "vagrant",
