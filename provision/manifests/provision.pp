@@ -8,3 +8,4 @@ class { php_ast_extension: }
 class { redis: }
 class { beanstalkd: }
 class { memcached: }
+class { composer: }
