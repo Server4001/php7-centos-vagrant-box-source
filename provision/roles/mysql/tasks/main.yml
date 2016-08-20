@@ -8,6 +8,9 @@
 # Simulate mysql_secure_installation
 - include: mysql_secure_installation.yml
 
+# Ensure root user exists with host 127.0.0.1
+- include: add_users.yml
+
 - name: Ensure MySQL is running
   service:
     name: mysqld

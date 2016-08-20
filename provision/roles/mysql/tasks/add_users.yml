@@ -1,0 +1,8 @@
+---
+- name: Add root user with host 127.0.0.1
+  mysql_user:
+    name: root
+    password: "{{ mysql_root_password }}"
+    priv: "*.*:ALL"
+    host: 127.0.0.1
+    state: present
