@@ -9,3 +9,5 @@ class { redis: }
 class { beanstalkd: }
 class { memcached: }
 class { composer: }
+
+# TODO : Bash. Vim?

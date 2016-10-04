@@ -38,3 +38,9 @@ Source environment for my [PHP7 CentOS vagrant box](https://atlas.hashicorp.com/
 * `sudo su`
 * `history -c && exit`
 * `cat /dev/null > ~/.bash_history && history -c && exit`
+
+### TODO:
+
+* Add 127.0.0.1 for root using:
+`CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY 'password';`
+`GRANT ALL ON *.* TO 'root'@'127.0.0.1';`
