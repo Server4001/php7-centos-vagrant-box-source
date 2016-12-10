@@ -11,7 +11,7 @@ Source environment for my [PHP7 CentOS vagrant box](https://atlas.hashicorp.com/
 * CentOS release 6.7 (Final)
 * Nginx 1.10.1
 * MySQL 5.7.13
-* PHP 7.0.7
+* PHP 7.0.13
 * Beanstalkd 1.10
 * Memcached 1.4.4
 * Redis 2.4.10
