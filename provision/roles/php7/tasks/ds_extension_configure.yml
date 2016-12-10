@@ -1,0 +1,25 @@
+---
+# Ensure that the json extension is loaded BEFORE ds (data structures). This avoids a bug.
+- name: Remove the json extension config file
+  file:
+    path: /etc/php.d/json.ini
+    state: absent
+  notify: Restart PHP-FPM
+
+- name: Copy the json extension config file to the correct location
+  template:
+    src: j-10-json.ini.j2
+    dest: /etc/php.d/j-10-json.ini
+    mode: 0644
+    owner: root
+    group: root
+  notify: Restart PHP-FPM
+
+- name: Copy the ds extension config file to the correct location
+  template:
+    src: j-20-ds.ini.j2
+    dest: /etc/php.d/j-20-ds.ini
+    mode: 0644
+    owner: root
+    group: root
+  notify: Restart PHP-FPM

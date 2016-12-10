@@ -6,3 +6,7 @@
 - include: ast_extension_install.yml
 
 - include: ast_extension_configure.yml
+
+- include: ds_extension_install.yml
+
+- include: ds_extension_configure.yml

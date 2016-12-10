@@ -19,6 +19,9 @@ Source environment for my [PHP7 CentOS vagrant box](https://atlas.hashicorp.com/
 
 ### Additional PHP extensions
 
+* [ast](https://github.com/nikic/php-ast)
+* [xdebug](https://xdebug.org/)
+* [Data Structures](http://docs.php.net/manual/en/book.ds.php)
 * [memcache](http://php.net/manual/en/book.memcache.php)
 
 ### Instructions

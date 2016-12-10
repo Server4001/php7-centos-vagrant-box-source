@@ -1,0 +1,5 @@
+---
+- name: Install the ds extension
+  pear:
+    name: pecl/ds
+    state: present
