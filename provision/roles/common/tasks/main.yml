@@ -14,6 +14,7 @@
   - screen
   - gcc
   - gcc-c++
+  - yum-utils
 
 - name: Install Ansible packages
   yum:
