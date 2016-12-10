@@ -9,13 +9,13 @@ Source environment for my [PHP7 CentOS vagrant box](https://atlas.hashicorp.com/
 ### Versions
 
 * CentOS release 6.7 (Final)
-* Nginx 1.10.1
+* Nginx 1.10.2
 * MySQL 5.7.13
 * PHP 7.0.13
 * Beanstalkd 1.10
 * Memcached 1.4.4
 * Redis 2.4.10
-* Composer 1.1.2
+* Composer 1.2.4
 
 ### Additional PHP extensions
 
@@ -36,6 +36,7 @@ Source environment for my [PHP7 CentOS vagrant box](https://atlas.hashicorp.com/
 * Test out the box by going to a different folder, running `vagrant init php7-centos-020`, and changing the `Vagrantfile` to fit your needs. Next, run `vagrant up`, and ensure everything is working.
 * Create a new version on Atlas.
 * Add a new provider to the version. The type should be `virtualbox`. Upload the `.box` file output by the `vagrant package` command above.
+* Add a new tag in git.
 
 ### Pre-packaging commands
 
