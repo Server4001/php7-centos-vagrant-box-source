@@ -1,0 +1,19 @@
+---
+- name: Copy RPM for pecl memcache extension
+  copy:
+    src: "{{ php_pecl_memcache_rpm_filename }}"
+    dest: "{{ php_pecl_memcache_rpm_tmp_path }}"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Install the PECL memcache extension from RPM
+  yum:
+    name: "{{ php_pecl_memcache_rpm_tmp_path }}"
+    state: present
+  notify: Restart PHP-FPM
+
+- name: Remove the PECL memcache RPM file
+  file:
+    path: "{{ php_pecl_memcache_rpm_tmp_path }}"
+    state: absent

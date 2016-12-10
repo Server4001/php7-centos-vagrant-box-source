@@ -1,0 +1,5 @@
+---
+- name: Check if pecl memcache extension for PHP has been installed
+  stat:
+    path: "{{ php_pecl_memcache_path }}"
+  register: pecl_memcache_stat

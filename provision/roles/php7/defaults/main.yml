@@ -21,3 +21,7 @@ php_packages:
 
 extension_build_directory: /opt
 extension_modules_folder: /usr/lib64/php/modules
+
+php_pecl_memcache_path: "{{ extension_modules_folder }}/memcache.so"
+php_pecl_memcache_rpm_filename: php7-pecl-memcache-centos-x86_64.rpm
+php_pecl_memcache_rpm_tmp_path: "/tmp/{{ php_pecl_memcache_rpm_filename }}"

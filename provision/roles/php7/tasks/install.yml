@@ -5,6 +5,8 @@
     state: latest
   with_items: "{{ php_packages }}"
 
+- include: pecl-memcache/main.yml
+
 - name: Start PHP-FPM
   service:
     name: php-fpm

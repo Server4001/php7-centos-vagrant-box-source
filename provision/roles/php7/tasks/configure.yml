@@ -44,6 +44,15 @@
     group: root
   notify: Restart PHP-FPM
 
+- name: Configure PHP Memcache
+  template:
+    src: memcache.ini.j2
+    dest: "/etc/php.d/memcache.ini"
+    mode: 0644
+    owner: root
+    group: root
+  notify: Restart PHP-FPM
+
 - name: Change ownership of PHP session and cache folders
   file:
     path: "/var/lib/php/{{ item }}"

@@ -17,6 +17,10 @@ Source environment for my [PHP7 CentOS vagrant box](https://atlas.hashicorp.com/
 * Redis 2.4.10
 * Composer 1.1.2
 
+### Additional PHP extensions
+
+* [memcache](http://php.net/manual/en/book.memcache.php)
+
 ### Instructions
 
 * `vagrant up`

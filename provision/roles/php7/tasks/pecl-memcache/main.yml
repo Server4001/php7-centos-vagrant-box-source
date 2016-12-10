@@ -1,0 +1,10 @@
+---
+- name: Install Yum pre-reqs for pecl memcache
+  yum:
+    name: zlib-devel
+    state: present
+
+- include: is_installed.yml
+
+- include: install.yml
+  when: pecl_memcache_stat.stat.exists == False
