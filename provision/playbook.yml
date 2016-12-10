@@ -1,8 +1,12 @@
 ---
 - name: "Provision Vagrant"
   hosts: default
-  sudo: yes
+  become: yes
+  become_method: sudo
   remote_user: vagrant
+  force_handlers: true
+  any_errors_fatal: true
+
   roles:
     - common
     - repo_install
