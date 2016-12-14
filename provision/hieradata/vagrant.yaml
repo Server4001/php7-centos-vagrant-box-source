@@ -1,0 +1,15 @@
+---
+classes:
+  - repos
+  - firewall
+  - common_packages
+  - mysql_install
+  - nginx
+  - php_install
+  - php_ast_extension
+  - redis
+  - beanstalkd
+  - memcached
+  - composer
+
+# TODO : Bash. Vim?
