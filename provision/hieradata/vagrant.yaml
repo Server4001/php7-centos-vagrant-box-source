@@ -12,4 +12,6 @@ classes:
   - memcached
   - composer
 
+mysql_install::mysql_root_password: password
+
 # TODO : Bash. Vim?
