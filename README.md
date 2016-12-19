@@ -29,11 +29,11 @@ Source environment for my [PHP7 CentOS vagrant box](https://atlas.hashicorp.com/
 * `vagrant up`
 * Make any changes you need to the box. Be sure to reflect these changes in the provisioning scripts.
 * Before packaging up the box, ssh in, and run the commands that are in the comments at the end of this readme.
-* Package up the box with `vagrant package --output php7-centos-0.2.0.box`. Replace `0.2.0` with the version number.
+* Package up the box with `vagrant package --output php7-centos-0.3.0.box`. Replace `0.3.0` with the version number.
 * Destroy the vm with `vagrant destroy --force`.
-* Add the new box to vagrant's local list with: `vagrant box add php7-centos-020 php7-centos-0.2.0.box`. Again, replace `020` and `0.2.0` with the version number.
+* Add the new box to vagrant's local list with: `vagrant box add php7-centos-030 php7-centos-0.3.0.box`. Again, replace `030` and `0.3.0` with the version number.
 * Delete the `.vagrant` folder with `rm -rf .vagrant`.
-* Test out the box by going to a different folder, running `vagrant init php7-centos-020`, and changing the `Vagrantfile` to fit your needs. Next, run `vagrant up`, and ensure everything is working.
+* Test out the box by going to a different folder, running `vagrant init php7-centos-030`, and changing the `Vagrantfile` to fit your needs. Next, run `vagrant up`, and ensure everything is working.
 * Create a new version on Atlas.
 * Add a new provider to the version. The type should be `virtualbox`. Upload the `.box` file output by the `vagrant package` command above.
 * Add a new tag in git.
