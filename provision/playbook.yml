@@ -3,7 +3,7 @@
   hosts: default
   become: yes
   become_method: sudo
-  remote_user: vagrant
+  gather_facts: yes
   force_handlers: true
   any_errors_fatal: true
 
