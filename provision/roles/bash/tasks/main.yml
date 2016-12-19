@@ -1,4 +1,9 @@
 ---
+- name: Install bash auto-completions
+  yum:
+    name: bash-completion
+    state: present
+
 - name: Copy non-root user's bash profile
   template:
     src: .bash_profile.j2
