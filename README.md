@@ -2,10 +2,6 @@
 
 Source environment for my [PHP7 CentOS vagrant box](https://atlas.hashicorp.com/server4001/boxes/php7-centos). Provisioned using Ansible.
 
-### Pre-reqs
-
-* [Ansible](http://docs.ansible.com/ansible/index.html)
-
 ### Versions
 
 * CentOS release 6.7 (Final)
@@ -46,7 +42,3 @@ Source environment for my [PHP7 CentOS vagrant box](https://atlas.hashicorp.com/
 * `sudo su`
 * `history -c && exit`
 * `cat /dev/null > ~/.bash_history && history -c && exit`
-
-### TODO
-
-* Change provisioner to `ansible-local`.
