@@ -1,10 +1,6 @@
 # php7-centos-vagrant-box-source
 
-Source environment for my [PHP7 CentOS vagrant box](https://atlas.hashicorp.com/server4001/boxes/php7-centos). Provisioned using Ansible.
-
-### Pre-reqs
-
-* [Ansible](http://docs.ansible.com/ansible/index.html)
+Source environment for my [PHP7 CentOS vagrant box](https://atlas.hashicorp.com/server4001/boxes/php7-centos). Provisioned using Puppet.
 
 ### Versions
 
