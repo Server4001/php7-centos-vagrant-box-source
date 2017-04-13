@@ -2,6 +2,8 @@
 
 Source environment for my [PHP7 CentOS vagrant box](https://atlas.hashicorp.com/server4001/boxes/php7-centos). Provisioned using Ansible.
 
+**NOTE:** This is the environment used to build the Vagrant box. If you are looking for a PHP7 environment, just use the box: [server4001/php7-centos](https://atlas.hashicorp.com/server4001/boxes/php7-centos)
+
 ### Versions
 
 * CentOS release 6.7 (Final)
@@ -32,13 +34,14 @@ Source environment for my [PHP7 CentOS vagrant box](https://atlas.hashicorp.com/
 * Test out the box by going to a different folder, running `vagrant init php7-centos-030`, and changing the `Vagrantfile` to fit your needs. Next, run `vagrant up`, and ensure everything is working.
 * Create a new version on Atlas.
 * Add a new provider to the version. The type should be `virtualbox`. Upload the `.box` file output by the `vagrant package` command above.
-* Add a new tag in git.
+* Commit your changes to git. Use the `master` branch.
+* Add a new tag in git: `git tag v0.3.0 && git push origin v0.3.0`.
 
 ### Pre-packaging commands
 
-* `sudo yum clean all`
-* `sudo dd if=/dev/zero of=/bigemptyfile bs=1M`
-* `sudo rm -rf /bigemptyfile`
-* `sudo su`
-* `history -c && exit`
-* `cat /dev/null > ~/.bash_history && history -c && exit`
+        `sudo yum clean all`
+        `sudo dd if=/dev/zero of=/bigemptyfile bs=1M`
+        `sudo rm -rf /bigemptyfile`
+        `sudo su`
+        `history -c && exit`
+        `cat /dev/null > ~/.bash_history && history -c && exit`
