@@ -6,15 +6,16 @@ Source environment for my [PHP7.1 CentOS vagrant box](https://atlas.hashicorp.co
 
 ### Versions
 
-# TODO : THIS:
 * CentOS release 6.7 (Final)
-* Nginx 1.10.2
-* MySQL 5.7.13
-* PHP 7.0.13
+* Nginx 1.12.0
+* MySQL 5.7.18
+* PHP 7.1.3
 * Beanstalkd 1.10
 * Memcached 1.4.4
 * Redis 2.4.10
-* Composer 1.2.4
+* Composer 1.4.1
+* Psysh 0.8.3
+* PHPUnit 5.7.19
 
 ### Additional PHP extensions
 
@@ -28,11 +29,11 @@ Source environment for my [PHP7.1 CentOS vagrant box](https://atlas.hashicorp.co
 * `vagrant up`
 * Make any changes you need to the box. Be sure to reflect these changes in the provisioning scripts.
 * Before packaging up the box, ssh in, and run the commands that are in the comments at the end of this readme.
-* Package up the box with `vagrant package --output php7-centos-0.1.0.box`. Replace `0.1.0` with the version number.
+* Package up the box with `vagrant package --output php71-centos-0.1.0.box`. Replace `0.1.0` with the version number.
 * Destroy the vm with `vagrant destroy --force`.
-* Add the new box to vagrant's local list with: `vagrant box add php7-centos-010 php7-centos-0.1.0.box`. Again, replace `010` and `0.1.0` with the version number.
+* Add the new box to vagrant's local list with: `vagrant box add php71-centos-010 php71-centos-0.1.0.box`. Again, replace `010` and `0.1.0` with the version number.
 * Delete the `.vagrant` folder with `rm -rf .vagrant`.
-* Test out the box by going to a different folder, running `vagrant init php7-centos-010`, and changing the `Vagrantfile` to fit your needs. Next, run `vagrant up`, and ensure everything is working.
+* Test out the box by going to a different folder, running `vagrant init php71-centos-010`, and changing the `Vagrantfile` to fit your needs. Next, run `vagrant up`, and ensure everything is working.
 * Create a new version on Atlas.
 * Add a new provider to the version. The type should be `virtualbox`. Upload the `.box` file output by the `vagrant package` command above.
 * Commit your changes to git. Use the `php71` branch.

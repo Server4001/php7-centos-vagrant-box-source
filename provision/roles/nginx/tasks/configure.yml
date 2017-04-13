@@ -32,3 +32,11 @@
     owner: root
     group: root
   notify: Restart Nginx
+
+- name: Add docroot index.php file
+  template:
+    src: index.php
+    dest: /var/www/html/index.php
+    mode: 0644
+    owner: vagrant
+    group: vagrant
