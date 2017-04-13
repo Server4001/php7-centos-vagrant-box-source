@@ -10,11 +10,11 @@
   roles:
     - common
     - repo_install
-#    - mysql
-#    - php71
-#    - nginx
-#    - beanstalkd
-#    - redis
-#    - memcached
-#    - composer
-#    - bash
+    - mysql
+    - php71
+    - nginx
+    - beanstalkd
+    - redis
+    - memcached
+    - composer
+    - bash

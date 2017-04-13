@@ -40,9 +40,9 @@ Source environment for my [PHP7.1 CentOS vagrant box](https://atlas.hashicorp.co
 
 ### Pre-packaging commands
 
-* `sudo yum clean all`
-* `sudo dd if=/dev/zero of=/bigemptyfile bs=1M`
-* `sudo rm -rf /bigemptyfile`
-* `sudo su`
-* `history -c && exit`
-* `cat /dev/null > ~/.bash_history && history -c && exit`
+        sudo yum clean all
+        sudo dd if=/dev/zero of=/bigemptyfile bs=1M
+        sudo rm -rf /bigemptyfile
+        sudo su
+        history -c && exit
+        cat /dev/null > ~/.bash_history && history -c && exit
